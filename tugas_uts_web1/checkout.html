@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="logo">
+        <span>Book Store</span>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html">Stok</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="history.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section" style="max-width:920px">
+    <h1>Halaman Pemesanan</h1>
+
+    <div id="orderAlert" class="alert success hidden mt-3">Pemesanan berhasil disimpan.</div>
+
+    <div class="grid cols-2 mt-3">
+      <div class="card">
+        <div class="card-header">Data Pemesan</div>
+        <div class="card-body">
+          <div id="orderError" class="alert danger hidden mb-3">Periksa kembali input yang bertanda merah.</div>
+          <form id="formOrder" class="form">
+            <input class="input" id="oNama" placeholder="Nama" required>
+            <input class="input" id="oAlamat" placeholder="Alamat" required>
+            <input class="input" id="oTelp" placeholder="No. Telp" required>
+            <div class="grid cols-2">
+              <select id="oBuku" class="input"></select>
+              <input class="input" id="oQty" type="number" min="1" value="1">
+            </div>
+            <div class="grid cols-2 mt-2">
+              <select id="oPay" class="input">
+                <option value="transfer">Transfer Bank (Biaya Rp 2.500)</option>
+                <option value="ewallet">E-Wallet (Biaya 1.5% min Rp 1.000)</option>
+                <option value="cod">COD (Biaya Rp 5.000)</option>
+              </select>
+              <div class="input" style="display:flex; align-items:center; justify-content:space-between">
+                <span>Biaya Admin</span>
+                <strong id="oFee">Rp 0</strong>
+              </div>
+            </div>
+            <div class="right mt-2">Subtotal: <strong id="oTotal">Rp 0</strong></div>
+            <div class="right mt-2">Total Bayar: <strong id="oGrand">Rp 0</strong></div>
+            <div class="actions mt-3"><button class="btn btn-primary" type="submit">Simpan Pesanan</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Ringkasan</div>
+        <div class="card-body" id="ringkasan">Pilih buku dan jumlah untuk melihat total.</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

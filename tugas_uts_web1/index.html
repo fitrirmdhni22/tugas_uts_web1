@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="logo">
+        <span>Book Store</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section" style="max-width:520px">
+    <h1>Masuk</h1>
+    <p class="mb-3">Gunakan email dan password yang terdaftar.</p>
+
+    <div id="loginAlert" class="alert danger hidden mb-3">Email atau password salah.</div>
+
+    <form id="loginForm" class="card form">
+      <div class="card-body">
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" type="email" required placeholder="nama@email.com">
+        <label class="label mt-3" for="password">Password</label>
+        <input class="input" id="password" type="password" required placeholder="••••••••">
+        <div class="actions mt-4">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-outline" data-modal-open="#modal-forgot">Lupa Password</button>
+          <button type="button" class="btn btn-outline" data-modal-open="#modal-register">Daftar</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <div id="modal-forgot" class="modal">
+    <div class="dialog">
+      <div class="dialog-header">Lupa Password<button class="btn btn-outline" data-modal-close>Close</button></div>
+      <div class="dialog-body">
+        <div class="alert">Hubungi admin atau gunakan akun contoh: rina@gmail.com / rina123</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-register" class="modal">
+    <div class="dialog">
+      <div class="dialog-header">Daftar Akun<button class="btn btn-outline" data-modal-close>Close</button></div>
+      <div class="dialog-body">
+        <div class="alert warn">Pendaftaran disimulasikan. Gunakan salah satu data yang sudah ada.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

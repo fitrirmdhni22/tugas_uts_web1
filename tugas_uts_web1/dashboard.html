@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="logo">
+        <span>Book Store</span>
+      </div>
+      <nav class="nav">
+        <a href="stok.html">Stok/Katalog</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="history.html">History</a>
+        <button id="btnLogout" class="btn-outline">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1 id="greet">Halo</h1>
+    <p class="mb-3" id="userInfo"></p>
+
+    <div class="grid cols-3 mt-4">
+      <div class="card"><div class="card-body"><div class="badge">Total Buku</div><h2 id="totalBuku" class="mt-2">0</h2></div></div>
+      <div class="card"><div class="card-body"><div class="badge">Stok Tersedia</div><h2 id="totalStok" class="mt-2">0</h2></div></div>
+      <div class="card"><div class="card-body"><div class="badge">Ekspedisi</div><h2 class="mt-2">JNE · Pos Indonesia</h2></div></div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

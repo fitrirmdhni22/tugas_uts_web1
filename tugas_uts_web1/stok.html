@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stok/Katalog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="logo">
+        <span>Book Store</span>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="history.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Informasi Stok/Katalog</h1>
+    <div class="card mt-3">
+      <div class="card-header">Tambah Baris Stok</div>
+      <div class="card-body">
+        <div id="stokError" class="alert danger hidden mb-3">Periksa kembali input yang bertanda merah.</div>
+        <form id="formAdd" class="form">
+          <div class="grid cols-3">
+            <input class="input" id="fKode" placeholder="Kode">
+            <input class="input" id="fNama" placeholder="Nama Buku">
+            <input class="input" id="fJenis" placeholder="Jenis">
+          </div>
+          <div class="grid cols-3">
+            <input class="input" id="fEdisi" placeholder="Edisi" type="number" min="1">
+            <input class="input" id="fStok" placeholder="Stok" type="number" min="0">
+            <input class="input" id="fHarga" placeholder="Harga (mis. Rp 200.000)">
+          </div>
+          <input class="input" id="fCover" placeholder="URL Cover (opsional)">
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Tambah</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-header">Daftar Buku</div>
+      <div class="card-body">
+        <div class="grid cols-3" id="gridBuku"></div>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-header">Tabel Stok</div>
+      <div class="card-body">
+        <table class="table">
+          <thead><tr><th>Kode</th><th>Nama</th><th>Jenis</th><th>Edisi</th><th>Stok</th><th>Harga</th></tr></thead>
+          <tbody id="stokBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
