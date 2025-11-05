@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="logo">
+        <span>Book Store</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section" style="max-width:520px">
+    <h1>Masuk</h1>
+    <p class="mb-3">Gunakan email dan password yang terdaftar.</p>
+
+    <div id="loginAlert" class="alert danger hidden mb-3">Email atau password salah.</div>
+
+    <form id="loginForm" class="card form">
+      <div class="card-body">
+        <label class="label" for="email">Email</label>
+        <input class="input" id="email" type="email" required placeholder="nama@email.com">
+        <label class="label mt-3" for="password">Password</label>
+        <input class="input" id="password" type="password" required placeholder="••••••••">
+        <div class="actions mt-4">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-outline" data-modal-open="#modal-forgot">Lupa Password</button>
+          <button type="button" class="btn btn-outline" data-modal-open="#modal-register">Daftar</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <div id="modal-forgot" class="modal">
+    <div class="dialog">
+      <div class="dialog-header">Lupa Password<button class="btn btn-outline" data-modal-close>Close</button></div>
+      <div class="dialog-body">
+        <form id="forgotForm" class="form">
+          <label class="label" for="forgotEmail">Email</label>
+          <input class="input" id="forgotEmail" type="email" required placeholder="nama@email.com">
+          <div class="actions mt-3">
+            <button type="submit" class="btn btn-primary">Kirim Link Reset</button>
+          </div>
+          <div id="forgotInfo" class="alert mt-3">Kami akan mengirimkan tautan reset ke email jika terdaftar.</div>
+          <div id="forgotSuccess" class="alert success hidden mt-3">Jika email terdaftar, tautan reset telah dikirim.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-register" class="modal">
+    <div class="dialog">
+      <div class="dialog-header">Daftar Akun<button class="btn btn-outline" data-modal-close>Close</button></div>
+      <div class="dialog-body">
+        <form id="registerForm" class="form">
+          <label class="label" for="regNama">Nama Pengguna</label>
+          <input class="input" id="regNama" type="text" required placeholder="Nama lengkap atau username">
+          <label class="label mt-3" for="regEmail">Email</label>
+          <input class="input" id="regEmail" type="email" required placeholder="nama@email.com">
+          <label class="label mt-3" for="regPass">Password</label>
+          <input class="input" id="regPass" type="password" required placeholder="••••••••">
+          <div class="actions mt-3">
+            <button type="submit" class="btn btn-primary">Daftar</button>
+          </div>
+          <div id="regSuccess" class="alert success hidden mt-3">Pendaftaran berhasil (simulasi). Silakan login menggunakan email dan password di atas.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

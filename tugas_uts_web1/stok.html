@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stok/Katalog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <img src="assets/logo.png" onerror="this.onerror=null;this.src='assets/logo.svg'" alt="logo">
+        <span>Book Store</span>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="history.html">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Informasi Stok/Katalog</h1>
+    <div class="actions mt-3">
+      <button class="btn btn-primary" data-modal-open="#modal-cart">Lihat Keranjang (<span id="cartCount">0</span>)</button>
+    </div>
+    <div class="card mt-3">
+      <div class="card-header">Tambah Data Buku</div>
+      <div class="card-body">
+        <div id="stokError" class="alert danger hidden mb-3">Periksa kembali input yang bertanda merah.</div>
+        <form id="formAdd" class="form">
+          <div class="grid cols-3">
+            <label class="label" for="fKode">Kode</label>
+            <label class="label" for="fNama">Nama Buku</label>
+            <label class="label" for="fJenis">Jenis</label>
+          </div>
+          <div class="grid cols-3">
+            <input class="input" id="fKode" placeholder="Kode">
+            <input class="input" id="fNama" placeholder="Nama Buku">
+            <input class="input" id="fJenis" placeholder="Jenis">
+          </div>
+          <div class="grid cols-3">
+            <label class="label" for="fEdisi">Edisi</label>
+            <label class="label" for="fStok">Stok</label>
+            <label class="label" for="fHarga">Harga</label>
+          </div>
+          <div class="grid cols-3">
+            <input class="input" id="fEdisi" placeholder="Edisi" type="number" min="1">
+            <input class="input" id="fStok" placeholder="Stok" type="number" min="0">
+            <input class="input" id="fHarga" placeholder="Harga (mis. Rp 200.000)">
+          </div>
+          <label class="label" for="fCover">URL Cover (opsional)</label>
+          <input class="input" id="fCover" placeholder="URL Cover (opsional)">
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Tambah</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-header">Daftar Buku</div>
+      <div class="card-body">
+        <div class="grid cols-3" id="gridBuku"></div>
+      </div>
+    </div>
+
+    <div class="card mt-3">
+      <div class="card-header">Tabel Stok</div>
+      <div class="card-body">
+        <table class="table">
+          <thead><tr><th scope="col">Kode</th><th scope="col">Nama</th><th scope="col">Jenis</th><th scope="col">Edisi</th><th scope="col">Stok</th><th scope="col">Harga</th></tr></thead>
+          <tbody id="stokBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div id="modal-cart" class="modal">
+    <div class="dialog">
+      <div class="dialog-header">Keranjang Belanja <button class="btn btn-outline" data-modal-close>Tutup</button></div>
+      <div class="dialog-body">
+        <div id="cartEmpty" class="alert warn hidden">Keranjang masih kosong.</div>
+        <table class="table mt-3">
+          <thead><tr><th>Nama Buku</th><th class="num">Qty</th><th class="currency">Harga</th><th class="currency">Subtotal</th><th>Aksi</th></tr></thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+        <div class="mt-3 right"><strong>Total: <span id="cartTotal">Rp 0</span></strong></div>
+        <div class="actions mt-3">
+          <a href="checkout.html" class="btn btn-primary">Checkout</a>
+          <button id="btnClearCart" class="btn btn-outline" type="button">Kosongkan Keranjang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
